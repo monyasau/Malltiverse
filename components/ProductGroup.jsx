@@ -51,7 +51,7 @@ const ProductGroup = ({ category, products }) => {
 }
 const style = StyleSheet.create({
     container: {
-        marginTop: 50,
+        marginVertical: 50,
     },
     productContainer: {
         flexDirection: "row",
