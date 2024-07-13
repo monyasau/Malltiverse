@@ -6,19 +6,19 @@ import Text from './CustomText';
 const TopNav = ({ setScreen }) => {
     return (
         <View style={style.container}>
-            <TouchableOpacity onPress={()=>setScreen("main")}>
+            <TouchableOpacity onPress={() => setScreen("main")}>
                 <Image source={require('../assets/Malltiverse.png')} />
             </TouchableOpacity>
             <View style={style.linksContainer}>
                 <TouchableOpacity onPress={() => setScreen("main")}>
 
-                    <Text style={{ color: '#FF7F7D', fontWeight: 700 }}>
+                    <Text style={{ color: '#FF7F7D',  }}>
                         Product Listing
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setScreen("cart")}>
 
-                    <Svg  width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <Rect x="0.5" y="0.5" width="34" height="34" rx="17" stroke="#2A2A2A" />
                         <Path d="M10.5 10.5H11.805C12.615 10.5 13.2525 11.1975 13.185 12L12.5625 19.47C12.4575 20.6925 13.425 21.7425 14.655 21.7425H22.6425C23.7225 21.7425 24.6675 20.8575 24.75 19.785L25.155 14.16C25.245 12.915 24.3 11.9025 23.0475 11.9025H13.365" stroke="#2A2A2A" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                         <Path d="M21.1875 25.5C21.7053 25.5 22.125 25.0803 22.125 24.5625C22.125 24.0447 21.7053 23.625 21.1875 23.625C20.6697 23.625 20.25 24.0447 20.25 24.5625C20.25 25.0803 20.6697 25.5 21.1875 25.5Z" stroke="#2A2A2A" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -27,7 +27,7 @@ const TopNav = ({ setScreen }) => {
                     </Svg>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setScreen("checkout")}>
-                    <Svg  width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <Rect x="0.5" y="0.5" width="34" height="34" rx="17" stroke="#2A2A2A" />
                         <Path d="M22.1263 24.8335H15.0263C14.3663 24.8335 13.733 24.5535 13.2863 24.0668C12.8397 23.5802 12.613 22.9268 12.6663 22.2668L13.2197 15.6268C13.2397 15.4202 13.1663 15.2202 13.0263 15.0668C12.8863 14.9135 12.693 14.8335 12.4863 14.8335H11.333C11.0597 14.8335 10.833 14.6068 10.833 14.3335C10.833 14.0602 11.0597 13.8335 11.333 13.8335H12.493C12.9797 13.8335 13.4397 14.0402 13.7663 14.3935C13.9463 14.5935 14.0797 14.8268 14.153 15.0868H22.4797C23.153 15.0868 23.773 15.3535 24.2263 15.8335C24.673 16.3202 24.8997 16.9535 24.8463 17.6268L24.4863 22.6268C24.413 23.8468 23.3463 24.8335 22.1263 24.8335ZM14.1863 16.0802L13.6663 22.3468C13.633 22.7335 13.7597 23.1002 14.0197 23.3868C14.2797 23.6735 14.6397 23.8268 15.0263 23.8268H22.1263C22.8197 23.8268 23.4463 23.2402 23.4997 22.5468L23.8597 17.5468C23.8863 17.1535 23.7597 16.7802 23.4997 16.5068C23.2397 16.2268 22.8797 16.0735 22.4863 16.0735H14.1863V16.0802Z" fill="#292D32" />
                         <Path d="M20.8333 28.1667C20.1 28.1667 19.5 27.5667 19.5 26.8333C19.5 26.1 20.1 25.5 20.8333 25.5C21.5667 25.5 22.1667 26.1 22.1667 26.8333C22.1667 27.5667 21.5667 28.1667 20.8333 28.1667ZM20.8333 26.5C20.6467 26.5 20.5 26.6467 20.5 26.8333C20.5 27.02 20.6467 27.1667 20.8333 27.1667C21.02 27.1667 21.1667 27.02 21.1667 26.8333C21.1667 26.6467 21.02 26.5 20.8333 26.5Z" fill="#292D32" />

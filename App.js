@@ -4,6 +4,9 @@ import TopNav from "./components/TopNav";
 import MainView from "./components/MainView";
 import ProductGroup from "./components/ProductGroup";
 import { useState } from "react";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import Payment from "./components/Payment";
 
 const products = [
   {
@@ -149,15 +152,32 @@ const products = [
   },
 ];
 export default function App() {
-  const [screen, setScreen] = useState("main");
+  const [screen, setScreen] = useState("payment");
+  const [cart, setCart] = useState([]);
   return (
-    <View style={styles.container} >
-      <TopNav setScreen={setScreen}/>
-      <ScrollView >
-        <MainView />
-        {products.map((product, index) => (
-          <ProductGroup category={product.category} products={product.items} />
-        ))}
+    <View style={styles.container}>
+      <TopNav setScreen={setScreen} />
+      <ScrollView style={{flexGrow:1}} contentContainerStyle={styles.scrollView}>
+        {screen == "main" ? (
+          <View>
+            <MainView />
+            {products.map((product, index) => (
+              <ProductGroup
+              key={index}
+                category={product.category}
+                products={product.items}
+              />
+            ))}
+          </View>
+        ) :screen=="cart"?
+        (
+          <View style={{flex:1}}>
+          <Cart cart={cart} setCart={setCart}/>
+          </View>
+        ):screen=="checkout"?
+        <Checkout setScreen={setScreen}/>:
+        <Payment setScreen={setScreen}/>
+      }
         <StatusBar style="dark" backgroundColor="#fff" />
       </ScrollView>
     </View>

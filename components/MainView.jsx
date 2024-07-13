@@ -7,14 +7,14 @@ const MainView = () => {
     const loaded = useFonts({
         Montserrat: require('../assets/fonts/Montserrat.ttf'),
     })
-    if(!loaded) {
+    if (!loaded) {
         return null
     }
     return (
         <View style={styles.container}>
             <Image source={require('../assets/Headphones.png')} style={styles.backgroundImage} />
             <View style={styles.bgImageText}><Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 30, }}>Premium Sound, Premium Savings</Text>
-            <Text style={{ color: "#FAFAFA", paddingTop:15, fontFamily: "Montserrat", fontSize: 15}}>Limited offer, hope you get yours now</Text>
+                <Text style={{ color: "#FAFAFA", paddingTop: 15, fontFamily: "Montserrat", fontSize: 15 }}>Limited offer, hope you get yours now</Text>
             </View>
         </View>
     );
