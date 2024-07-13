@@ -1,5 +1,7 @@
 import { useFonts } from 'expo-font';
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
+import Text from './CustomText';
+
 
 const MainView = () => {
     const loaded = useFonts({
