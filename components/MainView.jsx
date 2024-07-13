@@ -13,7 +13,7 @@ const MainView = () => {
     return (
         <View style={styles.container}>
             <Image source={require('../assets/Headphones.png')} style={styles.backgroundImage} />
-            <View style={styles.bgImageText}><Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 30 }}>Premium Sound, Premium Savings</Text>
+            <View style={styles.bgImageText}><Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 30, }}>Premium Sound, Premium Savings</Text>
             <Text style={{ color: "#FAFAFA", paddingTop:15, fontFamily: "Montserrat", fontSize: 15}}>Limited offer, hope you get yours now</Text>
             </View>
         </View>
