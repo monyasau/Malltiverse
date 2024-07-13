@@ -40,7 +40,7 @@ function Payment({ setScreen }) {
     };
 
     const handleSubmit = () => {
-        if (!validateInputs()) {
+        if (validateInputs()) {
             setPaySuccess(true)
         }
     };
@@ -69,12 +69,13 @@ function Payment({ setScreen }) {
                         <Path d="M25.8542 50.7629L35.6009 59.5287C35.9993 59.887 36.6094 59.8676 36.9842 59.4846L64.2842 31.5938" stroke="white" strokeWidth="8" stroke-linecap="round" />
                     </Svg>
 
-                    <Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 11, position: "absolute", bottom: "11%", left: "50%", fontWeight: "700", color: "#FAFAFA" }}>{expiryDate}</Text>
+                    <Text style={{  fontFamily: "Montserrat", fontSize: 18, fontWeight: "700" }}>Payment Successful</Text>
+                    <Text>Thanks for your purchase</Text>
                 </View>
                 : <><View style={style.imageContainer}>
-                    <Image source={require("../assets/visaCard.png")} style={{ position: "absolute", borderRadius: 20, width: "100%", }} />
-                    <Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 22, position: "absolute", bottom: "30%", left: 20, fontWeight: "600", color: "#FAFAFA" }}>{cardNumber}</Text>
-                    <Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 11, position: "absolute", bottom: "11%", left: "50%", fontWeight: "700", color: "#FAFAFA" }}>{expiryDate}</Text>
+                    <Image source={require("../assets/visaCard.png")} style={{ position: "absolute", borderRadius: 20, width: "100%", }} resizeMode="contain"/>
+                    <Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 18, position: "absolute", bottom: "35%", left: "10%", fontWeight: "600", color: "#FAFAFA" }}>{cardNumber}</Text>
+                    <Text style={{ color: "#FAFAFA", fontFamily: "Montserrat", fontSize: 11, position: "absolute", bottom: "15%", left: "50%", fontWeight: "700", color: "#FAFAFA" }}>{expiryDate}</Text>
                 </View>
 
                     <View style={{ marginTop: 20, flexDirection: "column" }}>

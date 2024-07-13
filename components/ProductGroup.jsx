@@ -1,8 +1,9 @@
+import React from 'react';
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Text from './CustomText';
 import { Path, Svg } from "react-native-svg";
 
-const ProductGroup = ({ category, products }) => {
+const ProductGroup = ({ category, products, cart, setCart }) => {
     const renderRating = (rating) => {
         const stars = [];
         for (let i = 0; i < 5; i++) {
@@ -16,6 +17,18 @@ const ProductGroup = ({ category, products }) => {
             );
         }
         return <View style={{ flexDirection: 'row', gap: 2 }}>{stars}</View>;
+    };
+
+    const handleAddToCart = (product) => {
+        setCart([...cart, product]);
+    };
+
+    const handleRemoveFromCart = (product) => {
+        setCart(cart.filter((item) => item.name !== product.name));
+    };
+
+    const isInCart = (product) => {
+        return cart.some((item) => item.name === product.name);
     };
 
     return (
@@ -36,19 +49,21 @@ const ProductGroup = ({ category, products }) => {
                     </View>
                     <Text style={{ fontSize: 12 }}>{product.description}</Text>
                     <Text style={{ color: "#FF7F7D", fontSize: 13 }}>{product.price}</Text>
-                    <TouchableOpacity style={{ borderWidth: 1, marginRight:"auto", alignItems:"center", padding:10, borderRadius:10,borderColor: "#FF7F7D" }}>
+                    <TouchableOpacity
+                        style={{ borderWidth: 1, marginRight: "auto", alignItems: "center", padding: 10, borderRadius: 10, borderColor: "#FF7F7D" }}
+                        onPress={() => isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}
+                    >
                         <Text>
-                            Add to cart
+                            {isInCart(product) ? 'Remove from cart' : 'Add to cart'}
                         </Text>
                     </TouchableOpacity>
                 </View>)
                 )}
             </View>
-            <View>
-            </View>
         </View>
     );
 }
+
 const style = StyleSheet.create({
     container: {
         marginVertical: 50,
@@ -59,8 +74,8 @@ const style = StyleSheet.create({
         justifyContent: "space-between",
     },
     product: {
-        justifyContent:"space-between",
-        gap:7,
+        justifyContent: "space-between",
+        gap: 7,
         width: "48%",
         borderRadius: 20,
         marginBottom: 20
@@ -75,6 +90,6 @@ const style = StyleSheet.create({
         width: "100%",
         height: 200
     }
-})
+});
 
 export default ProductGroup;

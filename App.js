@@ -151,33 +151,37 @@ const products = [
     ],
   },
 ];
+
 export default function App() {
-  const [screen, setScreen] = useState("payment");
+  const [screen, setScreen] = useState("main");
   const [cart, setCart] = useState([]);
+
   return (
     <View style={styles.container}>
       <TopNav setScreen={setScreen} />
-      <ScrollView style={{flexGrow:1}} contentContainerStyle={styles.scrollView}>
+      <ScrollView style={{ flexGrow: 1 }} contentContainerStyle={styles.scrollView}>
         {screen == "main" ? (
           <View>
             <MainView />
             {products.map((product, index) => (
               <ProductGroup
-              key={index}
+                key={index}
                 category={product.category}
                 products={product.items}
+                cart={cart}
+                setCart={setCart}
               />
             ))}
           </View>
-        ) :screen=="cart"?
-        (
-          <View style={{flex:1}}>
-          <Cart cart={cart} setCart={setCart}/>
+        ) : screen == "cart" ? (
+          <View style={{ flex: 1 }}>
+            <Cart cart={cart} setScreen={setScreen} setCart={setCart} />
           </View>
-        ):screen=="checkout"?
-        <Checkout setScreen={setScreen}/>:
-        <Payment setScreen={setScreen}/>
-      }
+        ) : screen == "checkout" ? (
+          <Checkout setScreen={setScreen} />
+        ) : (
+          <Payment setScreen={setScreen} />
+        )}
         <StatusBar style="dark" backgroundColor="#fff" />
       </ScrollView>
     </View>
@@ -191,7 +195,5 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
     width: "90%",
     backgroundColor: "#fff",
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
 });
