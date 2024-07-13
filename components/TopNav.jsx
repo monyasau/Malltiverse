@@ -1,5 +1,7 @@
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import Svg, { Path, Rect } from 'react-native-svg';
+import Text from './CustomText';
+
 
 const TopNav = () => {
     return (
