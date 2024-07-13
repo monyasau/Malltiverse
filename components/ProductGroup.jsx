@@ -36,7 +36,7 @@ const ProductGroup = ({ category, products }) => {
                     </View>
                     <Text style={{ fontSize: 12 }}>{product.description}</Text>
                     <Text style={{ color: "#FF7F7D", fontSize: 13 }}>{product.price}</Text>
-                    <TouchableOpacity style={{ borderWidth: 1, marginRight:"auto", padding:10, borderRadius:10,borderColor: "#FF7F7D" }}>
+                    <TouchableOpacity style={{ borderWidth: 1, marginRight:"auto", alignItems:"center", padding:10, borderRadius:10,borderColor: "#FF7F7D" }}>
                         <Text>
                             Add to cart
                         </Text>
@@ -59,6 +59,7 @@ const style = StyleSheet.create({
         justifyContent: "space-between",
     },
     product: {
+        justifyContent:"space-between",
         gap:7,
         width: "48%",
         borderRadius: 20,

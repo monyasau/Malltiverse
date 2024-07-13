@@ -42,7 +42,8 @@ const style = StyleSheet.create({
         marginBottom:30
     },
     linksContainer: {
-        width:"50%",
+        gap:5,
+        minWidth:"50%",
         alignItems: 'center',
         flexDirection: "row",
         justifyContent: "space-between"
