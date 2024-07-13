@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import TopNav from './components/TopNav';
+import MainView from './components/MainView';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <TopNav/>
-      <Text>skskk</Text>
+      <MainView/>
       <StatusBar style="auto" />
     </View>
   );
