@@ -27,10 +27,16 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/Montserrat.ttf"]
+          "fonts": [
+            "./assets/fonts/Montserrat.ttf"
+          ]
         }
       ]
-    ]
-    
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1b0efc22-e36e-4d29-885d-dc3113ccbd12"
+      }
+    }
   }
 }
