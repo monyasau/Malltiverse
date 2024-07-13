@@ -37,7 +37,6 @@ const style = StyleSheet.create({
         alignItems: 'center',
         flexDirection: "row",
         justifyContent: "space-between",
-        backgroundColor: '#fff333',
         marginBottom:30
     },
     linksContainer: {
