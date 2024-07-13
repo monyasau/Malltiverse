@@ -155,7 +155,7 @@ export default function App() {
       {products.map((product,index)=>
           (<ProductGroup category={product.category} products={product.items}/>)
       )}
-      <StatusBar style="auto" />
+      <StatusBar style="dark" backgroundColor='#fff' />
     </ScrollView>
   );
 }
